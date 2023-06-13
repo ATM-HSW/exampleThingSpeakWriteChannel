@@ -26,7 +26,6 @@
 #include "mbed.h"
 #include "EthernetInterface.h"
 
-#include "arduino_WString.h"
 
 //#define THINGSPEAK_DBG_MSG
 //#define THINGSPEAK_DBG_HTTP
@@ -72,8 +71,8 @@ int setup() {
     return open_result;
   }
 
-  thingSpeak.setSerial(&pc);
-  thingSpeak.begin(&socket);  // Initialize ThingSpeak
+  //thingSpeak.setSerial(&pc);
+  thingSpeak.begin(net);  // Initialize ThingSpeak
 
   return 0;
 }
